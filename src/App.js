@@ -7,7 +7,7 @@ const App = () => {
     const appRoutes = useRoutes(routes);
 
     return (
-        <Box sx={{ minHeight: "100vh", width: "100vw" }}>
+        <Box sx={{ height: "100vh", width: "100vw" }}>
             {appRoutes}
         </Box>
     );

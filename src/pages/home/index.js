@@ -1,29 +1,30 @@
-const react = require('react')
-const { useState, useEffect } = require('react')
+import React, { useState } from 'react';
 import SearchBar from '../../components/SearchBar';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import githubVisualizerImage from '../../assets/images/github_visualizer.png';
-
 
 export default function HomePage() {
     const [loading, setLoading] = useState(true);
     return (
-        <div
-            style={{
-                display: 'flex',
+        <Box
+            sx={{
+                width: "100%",
+                height: "100%",
+                p: 2,
+                display: "flex",
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: 'calc(100vh - 64px)'
-            }}>
-
-            <SearchBar />
+            }}
+        >
+            <Box sx={{ width: '100%', mb: 8 }}>
+                <SearchBar />
+            </Box>
             <Typography
                 variant="h4"
                 sx={{
                     color: '#fff',
                     fontWeight: 'bold',
-                    margin: '4rem 0',
+                    mb: 4,
                     textAlign: 'center',
                     fontSize: {
                         xs: '1rem',
@@ -40,9 +41,9 @@ export default function HomePage() {
                 alt="Github Visualizer"
                 sx={{
                     width: '100%',
-                    maxWidth: '600px',
+                    maxWidth: '30%',
                 }}
             />
-        </div>
+        </Box>
     )
 }

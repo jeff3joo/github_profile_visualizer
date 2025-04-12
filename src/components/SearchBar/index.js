@@ -2,7 +2,7 @@ import * as React from 'react';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
-
+import { Box } from '@mui/material';
 
 export default function SearchBar() {
 
@@ -24,6 +24,7 @@ export default function SearchBar() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        justifyItems: 'center'
     }));
 
     const SearchIconWrapper = styled('button')(({ theme }) => ({
@@ -56,26 +57,28 @@ export default function SearchBar() {
             width: '100%',
             [theme.breakpoints.up('sm')]: {
                 width: '20ch',
-                fontSize: '24px',
+                fontSize: '20px',
             },
         },
     }));
 
     return (
-        <Search>
-            <StyledInputBase
-                placeholder="Enter github username"
-                inputProps={{ 'aria-label': 'search' }}
-            />
-            <SearchIconWrapper>
-                <SearchIcon sx={{
-                    fontSize: {
-                        xs: '16px',
-                        sm: '24px',
-                        md: '32px',
-                    }
-                }} />
-            </SearchIconWrapper>
-        </Search>
+        <Box display={'flex'} justifyContent={'center'}>
+            <Search>
+                <StyledInputBase
+                    placeholder="Enter github username"
+                    inputProps={{ 'aria-label': 'search' }}
+                />
+                <SearchIconWrapper>
+                    <SearchIcon sx={{
+                        fontSize: {
+                            xs: '16px',
+                            sm: '24px',
+                            md: '32px',
+                        }
+                    }} />
+                </SearchIconWrapper>
+            </Search>
+        </Box>
     );
 }
